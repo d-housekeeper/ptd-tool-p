@@ -53,13 +53,13 @@ The key file must be exactly 32 bytes in length.
 
 Local save data always uses embedded key for encoding/decoding so you don't need to prepare one.
 
-Encoding:
+Decoding:
 
 ```
 ./ptd-tool decode-save-data ./OrigSaveData/oiou_0.ds > ./DecodedSaveData/oiou_0.json
 ```
 
-Decoding:
+Encoding:
 
 ```
 ./ptd-tool encode-save-data ./DecodedSaveData/oiou_0.json > ./SaveData/oiou_0.ds
@@ -71,7 +71,7 @@ You need to have copy of md directory created by the app on your computer.
 Replace `/path/to/md-dir` with actual md directory path.
 
 ```
-./ptd-tool decode-md /path/to/md-dir/MD_Avatar.json --config ./assets/md_loader_configs/MD_Avatar_config.json > MD_Avatar.json
+./ptd-tool decode-md /path/to/md-dir/MD_Avatar.snd --config ./assets/md_loader_configs/MD_Avatar_config.json > MD_Avatar.json
 ```
 
 `./assets/md_loader_configs/` contains configs needed for decoding some MD files.
