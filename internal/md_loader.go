@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"fmt"
 	"io"
-
+	"time"
 	"github.com/pkg/errors"
 )
 
@@ -145,6 +145,16 @@ func (m *mdLoader) loadField(field MDField) (interface{}, error) {
 			return nil, errors.Wrap(err, fmt.Sprintf("Failed to read DateTime value for %s at %d", field.Name, pos))
 		}
 		return string(b), nil
+	case "TimeSpan":
+		// TimeSpan int64 value 1 represents 100 nano sec.
+		b := make([]byte, 8)
+		_, err := io.ReadAtLeast(m.byteReader, b, 8)
+		if err != nil {
+			pos, _ := m.byteReader.Seek(0, io.SeekCurrent)
+			return nil, errors.Wrap(err, fmt.Sprintf("Failed to read TimeSpan value for %s at %d", field.Name, pos))
+		}
+		// return Go Duration string
+		return time.Unix(0,int64(binary.LittleEndian.Uint64(b))*100).Sub(time.Unix(0,0)).String(), nil
 	}
 
 	return nil, errors.Errorf("Unknown field type: %s", field.Type)
