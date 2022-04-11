@@ -1,0 +1,5 @@
+{"fields": [{"type":"string","name":"_ID", "include": true},
+{"type":"string","name":"_FileName", "include": true},
+{"type":"int","name":"_Category", "include": true},
+{"type":"int","name":"_Layer", "include": true},
+{"type":"string","name":"_DisappearInConjunction", "include": true}]}
