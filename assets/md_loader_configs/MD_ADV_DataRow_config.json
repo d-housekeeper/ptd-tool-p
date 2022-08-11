@@ -1,0 +1,24 @@
+{
+  "fields": [
+    {
+      "type": "string",
+      "name": "_ID",
+      "include": true
+    },
+{    "type": "list",
+      "name": "_List",
+      "include": true,
+"fields": [{"type":"int","name":"_OrderID", "include": true},
+{"type":"int","name":"_SceneChange", "include": true},
+{"type":"int","name":"_ThroughFlag", "include": true},
+{"type":"int","name":"_Delay", "include": true},
+{"type":"string","name":"_Value1", "include": true},
+{"type":"string","name":"_Value2", "include": true},
+{"type":"string","name":"_Value3", "include": true},
+{"type":"string","name":"_Value4", "include": true},
+{"type":"string","name":"_Value5", "include": true},
+{"type":"string","name":"_Value6", "include": true},
+{"type":"string","name":"_Value7", "include": true},
+{"type":"string","name":"_Value8", "include": true},
+{"type":"string","name":"_Value9", "include": true},
+{"type":"string","name":"_Value10", "include": true}]}]}
